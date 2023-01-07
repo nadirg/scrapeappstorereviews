@@ -1,0 +1,30 @@
+https://www.freecodecamp.org/news/how-to-use-python-to-scrape-app-store-reviews/
+
+pip install app_store_scraper 
+
+-- 
+
+import pandas as pd
+import numpy as np
+import json
+
+from app_store_scraper import AppStore
+slack = AppStore(country='us', app_name='slack', app_id = '618783545')
+
+slack.review(how_many=2000)
+
+--
+
+import datetime
+--
+import pandas as pd
+
+# Define the `reviews` variable
+reviews = [{'review': 'This is a great product', 'rating': 5},
+           {'review': 'I was disappointed with this product', 'rating': 2}]
+
+# Create a dataframe from the `reviews` variable
+df = pd.DataFrame(reviews)
+
+# Save the dataframe to a CSV file
+df.to_csv('chatgptreviews.csv', index=False, header=True)
